@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 3rd party
+    'crispy_forms',
+    'crispy_bootstrap5',
     # local
     'accounts',
     'pages',
@@ -128,6 +131,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static"] # to indicate where the static files are located
+STATIC_ROOT = BASE_DIR / "staticfiles" # to indicate where the static files will be collected
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' # default, but we can change it to s3 or something else
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
