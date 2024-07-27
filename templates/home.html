@@ -3,6 +3,6 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-    <h1>Welcome {{user.username}}</h1>
+    <h1>Welcome {{user}} from {{provider}}</h1>
     <img class="bookcover" src="{% static 'images/3sfoor.jpg' %}" alt="bookcover">
 {% endblock content %}
