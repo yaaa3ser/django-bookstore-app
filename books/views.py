@@ -7,6 +7,10 @@ class BookListView(LoginRequiredMixin, ListView):
     context_object_name = 'books'
     template_name = 'books/book_list.html'
     login_url = 'account_login'
+    
+    def get_queryset(self):
+        request_data = self.request.GET.dict()
+        return Book.objects.filter(**request_data)
 
 class BookDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     model = Book
